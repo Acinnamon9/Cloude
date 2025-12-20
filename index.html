@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Storage - Local File Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>☁️ Cloud Storage</h1>
+            <p class="subtitle">Local File Management System</p>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="upload-section">
+                    <input type="file" id="fileInput" multiple style="display: none;">
+                    <button class="btn btn-primary" id="uploadBtn">
+                        <span>📤</span> Upload Files
+                    </button>
+                </div>
+
+                <nav class="categories">
+                    <h3>Categories</h3>
+                    <ul class="category-list">
+                        <li class="category-item active" data-category="all">
+                            <span>📁</span> All Files
+                        </li>
+                        <li class="category-item" data-category="picture">
+                            <span>🖼️</span> Pictures
+                        </li>
+                        <li class="category-item" data-category="video">
+                            <span>🎥</span> Videos
+                        </li>
+                        <li class="category-item" data-category="file">
+                            <span>📄</span> Files
+                        </li>
+                        <li class="category-item" data-category="large">
+                            <span>💾</span> Large Files
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="storage-info">
+                    <h3>Storage Info</h3>
+                    <div class="storage-stats">
+                        <p>Total Files: <span id="totalFiles">0</span></p>
+                        <p>Storage Used: <span id="storageUsed">0 MB</span></p>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="content-area">
+                <div class="toolbar">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="🔍 Search files...">
+                    </div>
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid" title="Grid View">⊞</button>
+                        <button class="view-btn" data-view="list" title="List View">☰</button>
+                    </div>
+                </div>
+
+                <div class="files-container" id="filesContainer">
+                    <div class="empty-state">
+                        <div class="empty-icon">📂</div>
+                        <h2>No files yet</h2>
+                        <p>Upload your first file to get started!</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
